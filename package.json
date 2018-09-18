@@ -1,0 +1,19 @@
+{
+  "name": "nuxtblog",
+  "version": "1.0.0",
+  "description": "My wonderful Nuxt.js project",
+  "author": "Stefan Milic",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1"
+  }
+}
