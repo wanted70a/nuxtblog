@@ -3,41 +3,18 @@
       <section class='intro'>
           <h1>Get Latest Tech News</h1>
       </section>
-      <section class='fetaured-post'>
-          <nuxt-link :to="'/posts/'+1">
-              <article class="post-preview">
-                  <div class="post-thumbnail">
-                      <img src="https://dummyimage.com/600x400/f052be/0011ff.jpg" alt="">
-                  </div>
-                  <div class="post-content">
-                      <h1>Post Title</h1>
-                      <p>
-                          Preview text
-                      </p>
-                  </div>
-              </article>
-          </nuxt-link>
-          <nuxt-link :to="'/posts/'+2">
-              <article class="post-preview">
-                  <div class="post-thumbnail">
-                      <img src="https://dummyimage.com/600x400/f052be/0011ff.jpg" alt="">
-                  </div>
-                  <div class="post-content">
-                      <h1>Post Title</h1>
-                      <p>
-                          Preview text
-                      </p>
-                  </div>
-              </article>
-          </nuxt-link>
+      <section class='featured-posts'>
+          <post-list/>
       </section>
   </div>
 </template>
 
 <script>
-
+import PostList from '~/components/posts/PostList.vue';
 export default {
-
+    components:{
+        PostList
+    }
 }
 </script>
 
@@ -49,6 +26,7 @@ export default {
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
+  background-image: url('~assets/images/main-page-background.jpg');
 }
 
 .intro h1 {
@@ -79,41 +57,5 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
