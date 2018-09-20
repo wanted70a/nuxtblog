@@ -1,29 +1,16 @@
 <template lang="html">
   <div class="admin-new-post-page">
     <section class='new-post-form'>
-      <form class="" @submit.prevent='onSave'>
-        <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
-        <AppControlInput v-model="editedPost.title">Title</AppControlInput>
-        <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>
-        <AppControlInput
-         control-type="textarea"
-         v-model="editedPost.content">Content</AppControlInput>
-       <AppButton type="submit">Save</AppButton>
-       <AppButton
-         type="button"
-         style="margin-left: 10px"
-         btn-style="cancel"
-         @click="onCancel">Cancel</AppButton>
-      </form>
+        <admin-post-form/>
     </section>
   </div>
 </template>
 
 <script>
-import AppControlInput from '@/components/ui/AppControlInput.vue';
-import AppButton from "@/components/ui/AppButton";
+import AdminPostForm from '@/components/admin/AdminPostForm.vue';
 
 export default {
+  layout: 'admin',
   data(){
     return{
       editedPost:{
@@ -46,12 +33,20 @@ export default {
     }
   },
   components:{
-    AppButton,
-    AppControlInput
+    AdminPostForm
   }
 }
-
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
+.new-post-form {
+  width: 90%;
+  margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+  .new-post-form {
+    width: 500px;
+  }
+}
 </style>

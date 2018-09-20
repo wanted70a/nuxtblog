@@ -1,6 +1,7 @@
 <template lang="html">
     <section class='posts-list'>
         <post-preview
+        :isAdmin='isAdmin'
         key='1'
         id="1"
         thumbnail="https://dummyimage.com/600x400/bed455/0011ff.jpg"
@@ -8,6 +9,7 @@
         previewText="Lorem Ipsum dolore is dummy text to replace real data">
         </post-preview>
         <post-preview
+        :isAdmin='isAdmin'
         key='2'
         id="2"
         thumbnail="https://dummyimage.com/600x400/f041be/0011ff.jpg"
@@ -15,6 +17,7 @@
         previewText="Lorem Ipsum dolore is dummy text to replace real data">
         </post-preview>
         <post-preview
+        :isAdmin='isAdmin'
         key='3'
         id="3"
         thumbnail="https://dummyimage.com/600x400/111333/0011ff.jpg"
@@ -22,6 +25,7 @@
         previewText="Lorem Ipsum dolore is to replace real data">
         </post-preview>
         <post-preview
+        :isAdmin='isAdmin'
         key='4'
         id="4"
         thumbnail="https://dummyimage.com/600x400/111333/0011ff.jpg"
@@ -36,6 +40,12 @@ import PostPreview from '@/components/posts/PostPreview'
 export default {
     components:{
         PostPreview
+    },
+    props:{
+        isAdmin:{
+            type:Boolean,
+            default:false
+        }
     }
 }
 </script>
