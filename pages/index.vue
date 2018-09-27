@@ -15,42 +15,11 @@ export default {
     components:{
         PostList
     },
-    asyncData(context, callback){
-        console.log('hp asinc');
-        setTimeout( ()=>{
-            callback(null, {
-                posts:[
-                    {
-                        isAdmin:false,
-                        id:"1",
-                        thumbnail:"https://dummyimage.com/600x400/bed455/0011ff.jpg",
-                        title:"Naslov Number One",
-                        previewText:"Lorem Ipsum Dolores",
-                    },
-                    {
-                        isAdmin:false,
-                        id:"2",
-                        thumbnail:"https://dummyimage.com/600x400/bed455/0011ff.jpg",
-                        title:"Naslov Number Two",
-                        previewText:"Lorem Ipsum Dolores",
-                    },
-                    {
-                        isAdmin:false,
-                        id:"3",
-                        thumbnail:"https://dummyimage.com/600x400/bed455/0011ff.jpg",
-                        title:"Naslov Number Three",
-                        previewText:"Lorem Ipsum Dolores",
-                    }
-               ]
-            } )
-        }, 1500)
-    },
-
-    // data(){
-    //     return{
-    //         posts:[]
-    //     }
-    // }
+    computed:{
+        posts(){
+            return this.$store.getters.posts;
+        }
+    }
 }
 </script>
 
